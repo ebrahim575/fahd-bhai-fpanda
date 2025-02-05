@@ -4,6 +4,16 @@
     <title>FP&A Assistant</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sf-pro-display">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+    </style>
+
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -124,6 +134,32 @@
                 <h3 class="text-gray-700 dark:text-gray-300 font-medium">Analysis Result</h3>
             </div>
             <p id="responseText" class="text-gray-800 dark:text-gray-200 leading-relaxed"></p>
+        </div>
+
+        <!-- Add this new section for data input -->
+        <div class="bg-white/80 dark:bg-gray-800/40 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-8 mb-8">
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">Company Data Input</h2>
+            <div class="flex gap-4 mb-4">
+                <input type="file" id="dataFile" accept=".json" class="hidden" />
+                <button onclick="document.getElementById('dataFile').click()" 
+                        class="px-4 py-2 bg-startup-purple text-white rounded-lg hover:opacity-90">
+                    Upload Data File
+                </button>
+                <button onclick="useDefaultData()" 
+                        class="px-4 py-2 border border-startup-purple text-startup-purple rounded-lg hover:bg-startup-purple/10">
+                    Use Sample Data
+                </button>
+            </div>
+        </div>
+
+        <!-- Add this for dynamic charts -->
+        <div class="grid grid-cols-2 gap-6 mb-8">
+            <div class="bg-white/80 dark:bg-gray-800/40 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-6">
+                <div id="revenueChart" class="h-80"></div>
+            </div>
+            <div class="bg-white/80 dark:bg-gray-800/40 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-6">
+                <div id="metricsChart" class="h-80"></div>
+            </div>
         </div>
     </div>
 
