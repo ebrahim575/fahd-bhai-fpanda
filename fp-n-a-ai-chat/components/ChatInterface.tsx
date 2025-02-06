@@ -7,6 +7,8 @@ type Message = {
   id: number
   text: string
   sender: "user" | "ai"
+  graphs?: any[]
+  data?: any[]
 }
 
 export default function ChatInterface() {
@@ -37,9 +39,22 @@ export default function ChatInterface() {
       const aiMessage: Message = { 
         id: Date.now(), 
         text: data.response, 
-        sender: "ai" 
+        sender: "ai",
+        graphs: data.graphs,
+        data: data.data
       }
       setMessages((prev) => [...prev, aiMessage])
+      
+      // Update graphs if present in response
+      if (data.graphs?.length > 0) {
+        window.dispatchEvent(new CustomEvent('updateGraphs', { 
+          detail: { 
+            graphs: data.graphs, 
+            data: data.data,
+            append: true // New flag to indicate this is from chat
+          }
+        }))
+      }
     } catch (error) {
       console.error('Error:', error)
     } finally {

@@ -19,11 +19,13 @@ export default function Home() {
           <ThemeToggle />
         </div>
       </header>
-      <main className="flex-grow flex flex-col p-3 space-y-3 overflow-hidden">
-        <Suspense fallback={<div className="h-64 bg-secondary animate-pulse rounded-md"></div>}>
+      <main className="flex-grow flex flex-col p-3 space-y-3 overflow-hidden max-w-5xl mx-auto w-full">
+        <div className="flex-grow overflow-y-auto">
           <DynamicGraphSection />
-        </Suspense>
-        <ChatInterface />
+        </div>
+        <div className="flex-shrink-0 sticky bottom-0 bg-background pb-3">
+          <ChatInterface />
+        </div>
       </main>
     </div>
   )

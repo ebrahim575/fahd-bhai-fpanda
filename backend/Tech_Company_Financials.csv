@@ -1,0 +1,25 @@
+Category,Subcategory,Amount (USD)
+Revenue,Product Sales,50000000
+Revenue,Subscription Revenue,20000000
+Revenue,Advertising Revenue,15000000
+Revenue,Cloud Services,30000000
+Revenue,Other Revenue,5000000
+Operating Expenses,Salaries,12000000
+Operating Expenses,Office Rent,3000000
+Operating Expenses,Utilities,500000
+Operating Expenses,Software Licenses,2000000
+Operating Expenses,Legal Fees,1500000
+R&D Expenses,AI Research,8000000
+R&D Expenses,Software Development,10000000
+R&D Expenses,Hardware Development,5000000
+Marketing Expenses,Digital Marketing,4000000
+Marketing Expenses,TV Ads,3000000
+Marketing Expenses,Sponsorships,2000000
+General & Admin Expenses,Executive Salaries,5000000
+General & Admin Expenses,Office Supplies,200000
+General & Admin Expenses,Misc Admin Costs,500000
+Cost of Goods Sold (COGS),Manufacturing Costs,15000000
+Cost of Goods Sold (COGS),Shipping & Logistics,5000000
+Cost of Goods Sold (COGS),Supplier Payments,12000000
+Net Profit,Gross Profit,78000000
+Net Profit,Net Income After Tax,25000000
